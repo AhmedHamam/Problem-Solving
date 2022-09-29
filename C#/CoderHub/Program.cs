@@ -36,6 +36,12 @@
             // write your code here
             return a && b;
         }
+        //convert hours to seconds 
+        public static int convert_hours_to_seconds(int hours)
+        {
+            // write your code here
+            return hours * 3600;
+        }
     }
 
 
