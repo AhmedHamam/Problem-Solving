@@ -11,6 +11,30 @@
             int num = int.Parse(str);
             System.Console.WriteLine(sum_of_even_and_odd_digits(num));
         }
+
+        // Write a function that receives two text values of type string,  if the two input values contain numbers, 
+        //  the function add the numbers and returns sum as a text value, 
+        //  and if one of the inputs contains characters it returns -1 as the text value
+        public static string is_Numbers(string str1, string str2)
+        {
+            int num1 = 0;
+            int num2 = 0;
+            bool isNum1 = int.TryParse(str1, out num1);
+            bool isNum2 = int.TryParse(str2, out num2);
+            if (isNum1 && isNum2)
+            {
+                return (num1 + num2).ToString();
+            }
+            else
+            {
+                return "-1";
+            }
+        }
+
+
+
+
+
         public static string date_format(string date)
         {
             // write your code here
