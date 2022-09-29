@@ -24,5 +24,21 @@
             return word.Substring(0, word.Length - 1);
 
         }
+        //count number of characters in a string
+        public static int count(string word)
+        {
+            // write your code here
+            return word.Length;
+        }
+        //logical_and
+        public static bool logical_and(bool a, bool b)
+        {
+            // write your code here
+            return a && b;
+        }
     }
+
+
+
 }
+
