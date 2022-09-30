@@ -7,33 +7,38 @@
             // System.Console.WriteLine(is_same("Anas", "anas"));
             // System.Console.WriteLine(deleteLastChar("Ahmed"));
             string str = Console.ReadLine()!;
-
-            int num = int.Parse(str);
-            System.Console.WriteLine(sum_of_even_and_odd_digits(num));
+            // System.Console.WriteLine(sum_of_even_and_odd_digits(num));
+            System.Console.WriteLine(bin_to_oct(str));
         }
 
-        // Write a function that receives two text values of type string,  if the two input values contain numbers, 
-        //  the function add the numbers and returns sum as a text value, 
-        //  and if one of the inputs contains characters it returns -1 as the text value
-        public static string is_Numbers(string str1, string str2)
+        //write function to convert binary to octal without convert to int or double
+        public static int bin_to_oct(string b)
         {
-            int num1 = 0;
-            int num2 = 0;
-            bool isNum1 = int.TryParse(str1, out num1);
-            bool isNum2 = int.TryParse(str2, out num2);
-            if (isNum1 && isNum2)
+            string octal = "";
+            int i = b.Length - 1;
+            while (i >= 2)
             {
-                return (num1 + num2).ToString();
+                int sum = 0;
+                int j = 0;
+                while (j < 3)
+                {
+                    sum += (b[i] - '0') * (int)Math.Pow(2, j);
+                    j++;
+                    i--;
+                }
+                octal += sum;
             }
-            else
+            int sum2 = 0;
+            int j2 = 0;
+            while (i >= 0)
             {
-                return "-1";
+                sum2 += (b[i] - '0') * (int)Math.Pow(2, j2);
+                j2++;
+                i--;
             }
+            octal += sum2;
+            return int.Parse(new string(octal.Reverse().ToArray()).TrimStart('0'));
         }
-
-
-
-
 
         public static string date_format(string date)
         {
